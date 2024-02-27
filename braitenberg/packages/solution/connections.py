@@ -6,13 +6,10 @@ import numpy as np
 def get_motor_left_matrix(shape: Tuple[int, int]) -> np.ndarray:
     # TODO: write your function instead of this one
     res = np.zeros(shape=shape, dtype="float32")
-    if (res[300:, 0:200]):
-        res=1
-    elif (res[300:, 400:600]):
-        res=0
-    else:
-        res=1
-
+    # these are random values
+    res[300:, 0:200] = 1
+    res[300:, 400:600] = 0
+    res[0:299, 201:399]=1
     #res[:, :shape[1] // 2] = preprocess[:, :shape[1] // 2] / 255
     # ---
     return res
@@ -21,12 +18,11 @@ def get_motor_left_matrix(shape: Tuple[int, int]) -> np.ndarray:
 def get_motor_right_matrix(shape: Tuple[int, int]) -> np.ndarray:
     # TODO: write your function instead of this one
     res = np.zeros(shape=shape, dtype="float32")
-    if (res[300:, 400:600]):
-        res=1
-    elif (res[300:, 0:200]):
-        res=0
-    else:
-        res=1
+    # these are random values
+    res[300:, 400:600] = 1
+    res[300:, 0:200] = 0
+    res[0:299, 201:399]=1
+
     #res[:, shape[1] // 2:] = preprocess[:, shape[1] // 2:] / 255
     # ---
     return res
