@@ -58,9 +58,8 @@ def filter_by_bboxes(bbox: Tuple[int, int, int, int]) -> bool:
                 This means the shape of bbox is (leftmost x pixel, topmost y, rightmost x, bottommost y)
     """
     # TODO: Like in the other cases, return False if the bbox should not be considered.
-    lower_middle_x = (bbox[0]+bbox[2])/2
-    lower_middle_y = bbox[3]
-    if lower_middle_y > (2 * bbox[1] / 3):
+    Third=((bbox[1]-bbox[3])*2)/3
+    if  bbox[3]>Third:
         return True  # It's in the lower third
     else:
         return False  # It's not in the lower third
