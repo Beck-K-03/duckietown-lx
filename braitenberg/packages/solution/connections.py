@@ -1,17 +1,14 @@
 from typing import Tuple
+#from braitenberg_agent.agent import preprocess
 import numpy as np
 import math
-#Decay is decay rate
-#yrange is the highest value that the exponent reaches
-#Radius is the radius of the cirlce used to make the matrix
 Decay=0.99056
 YRange=355
 Radius=300
-#the double for loop generates the circle while the single at the bottom generates the exponential decay
 
 def get_motor_left_matrix(shape: Tuple[int, int]) -> np.ndarray:
+    # TODO: write your function instead of this one
     res = np.zeros(shape=shape, dtype="float32")
-
     for k in range (Radius):
         for i in range(640):
             num=(k**2)-((i-320)**2)
@@ -30,6 +27,7 @@ def get_motor_left_matrix(shape: Tuple[int, int]) -> np.ndarray:
 
 
 def get_motor_right_matrix(shape: Tuple[int, int]) -> np.ndarray:
+    # TODO: write your function instead of this one
     res = np.zeros(shape=shape, dtype="float32")
     for k in range (Radius):
         for i in range(640):
