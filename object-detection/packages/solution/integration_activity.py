@@ -37,7 +37,10 @@ def filter_by_classes(pred_class: int) -> bool:
     # Right now, this returns True for every object's class
     # TODO: Change this to only return True for duckies!
     # In other words, returning False means that this prediction is ignored.
-    return pred_class==1
+    if(pred_class==1):
+        return True
+    else:
+        return False
 
 
 def filter_by_scores(score: float) -> bool:
