@@ -61,5 +61,7 @@ def filter_by_bboxes(bbox: Tuple[int, int, int, int]) -> bool:
                 This means the shape of bbox is (leftmost x pixel, topmost y, rightmost x, bottommost y)
     """
     print(f"BBOX Coordinates: {bbox}")
+    bbox[0]=bbox[0]+75
+    bbox[1]=bbox[1]-50
     # TODO: Like in the other cases, return False if the bbox should not be considered.
     return True  
