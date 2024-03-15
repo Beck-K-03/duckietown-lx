@@ -60,7 +60,6 @@ def filter_by_bboxes(bbox: Tuple[int, int, int, int]) -> bool:
         bbox: is the bounding box of a prediction, in xyxy format
                 This means the shape of bbox is (leftmost x pixel, topmost y, rightmost x, bottommost y)
     """
-    bbox[0]=bbox[0]+100
-    bbox[1]=bbox[1]-500
+    print ("yeah"+ bbox[0], bbox[1], bbox[2],bbox[3])
     # TODO: Like in the other cases, return False if the bbox should not be considered.
     return True  
