@@ -62,7 +62,7 @@ def filter_by_bboxes(bbox: Tuple[int, int, int, int]) -> bool:
     """
     print(f"BBOX Coordinates: {bbox}")
     # TODO: Like in the other cases, return False if the bbox should not be considered.
-    if (bbox[0]>400 and bbox[1]<60):
+    if (bbox[0]>220 and bbox[1]<150):
         return True 
     else:
         return False 
