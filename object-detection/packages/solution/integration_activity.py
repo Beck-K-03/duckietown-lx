@@ -37,7 +37,7 @@ def filter_by_classes(pred_class: int) -> bool:
     # Right now, this returns True for every object's class
     # TODO: Change this to only return True for duckies!
     # In other words, returning False means that this prediction is ignored.
-    if(pred_class==1):
+    if(pred_class==0):
         return True
     else:
         return False
@@ -60,6 +60,7 @@ def filter_by_bboxes(bbox: Tuple[int, int, int, int]) -> bool:
         bbox: is the bounding box of a prediction, in xyxy format
                 This means the shape of bbox is (leftmost x pixel, topmost y, rightmost x, bottommost y)
     """
+    bbox[0]=bbox[0]+100
+    bbox[1]=bbox[1]-500
     # TODO: Like in the other cases, return False if the bbox should not be considered.
-
-    return True  # It's in the lower third
+    return True  
