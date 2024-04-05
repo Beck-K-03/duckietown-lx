@@ -65,8 +65,8 @@ def detect_lane_markings(image: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
     mask_left_edge = cv2.inRange(hsv, yellow_lower, yellow_upper)
     
     # White color range for right lane markings
-    white_lower = np.array([61, 0, 160], dtype="uint8")
-    white_upper = np.array([190, 111, 255], dtype="uint8")
+    white_lower = np.array([55, 0, 100], dtype="uint8")
+    white_upper = np.array([200, 255, 255], dtype="uint8")
     mask_right_edge = cv2.inRange(hsv, white_lower, white_upper)
     # TODO: implement your own solution here
     #mask_left_edge = np.random.rand(h, w)
