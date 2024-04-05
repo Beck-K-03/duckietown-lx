@@ -14,8 +14,13 @@ def get_steer_matrix_left_lane_markings(shape: Tuple[int, int]) -> np.ndarray:
                             using the masked left lane markings (numpy.ndarray)
     """
     height, width = shape
+    steer_matrix_left = np.zeros(shape)
+    
+    for i in range(width):
+        # Gradually change value from -1 to 0 across the width
+        value = -1 + (i / (width - 1))
+        steer_matrix_left[:, i] = value
     # TODO: implement your own solution here
-    steer_matrix_left = np.tile(np.linspace(-1, 0, width), (height, 1))
     #steer_matrix_left = np.random.rand(*shape)
     # ---
     return steer_matrix_left
@@ -31,8 +36,13 @@ def get_steer_matrix_right_lane_markings(shape: Tuple[int, int]) -> np.ndarray:
                              using the masked right lane markings (numpy.ndarray)
     """
     height, width = shape
+    steer_matrix_right = np.zeros(shape)
+    
+    for i in range(width):
+        # Gradually change value from 0 to -1 across the width
+        value = 0 - (i / (width - 1))
+        steer_matrix_right[:, i] = value
     # TODO: implement your own solution here
-    steer_matrix_right = np.tile(np.linespace(0,-1,width), (height, 1))
     #steer_matrix_right = np.random.rand(*shape)
     # ---
     return steer_matrix_right
